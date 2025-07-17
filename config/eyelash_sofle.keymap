@@ -77,20 +77,6 @@
         bindings = <&lt 4 BACKSPACE>, <&kp BACKSPACE>;
     };
 
-    homerow: homerow {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW";
-        bindings = <&kp>, <&kp>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <168>;
-        flavor = "tap-unless-interrupted";
-        quick-tap-ms = <168>;
-        require-prior-idle-ms = <146>;
-        hold-trigger-key-positions = <28 29 30 34 35 36>;
-        hold-while-undecided;
-    };
-
     td_del: td_del {
         compatible = "zmk,behavior-tap-dance";
         label = "TD_DEL";
@@ -98,6 +84,34 @@
         bindings = <&mt RIGHT_SHIFT DELETE>, <&kp DELETE>;
 
         tapping-term-ms = <180>;
+    };
+
+    timeless_homerow_left: timeless_homerow_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TIMELESS_HOMEROW_LEFT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <280>;
+        flavor = "balanced";
+        quick-tap-ms = <168>;
+        require-prior-idle-ms = <145>;
+        hold-trigger-key-positions = <1 2 3 4 5 14 15 16 17 18 27 28 29 30 31 40 41 42 43 44 0 13 26 39 53 54 55 56 57 59 60 61 62 63>;
+        hold-trigger-on-release;
+    };
+
+    timeless_homerow_right: timeless_homerow_right {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TIMELESS_HOMEROW_RIGHT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <280>;
+        flavor = "balanced";
+        quick-tap-ms = <168>;
+        require-prior-idle-ms = <145>;
+        hold-trigger-on-release;
+        hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
     };
 
     behaviors {
@@ -142,11 +156,11 @@
 
         base {
             bindings = <
-&kp GRAVE    &kp N1    &kp N2            &kp N3           &kp N4           &kp N5        &kp UP_ARROW     &kp N6      &kp N7           &kp N8           &kp N9            &kp N0     &tog 5
-&caps_multi  &kp Q     &kp W             &kp E            &kp R            &kp T         &kp DOWN_ARROW   &kp Y       &kp U            &kp I            &kp O             &kp P      &kp BSLH
-&kp LCTRL    &kp A     &homerow LCTRL S  &homerow LALT D  &homerow LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &homerow LGUI J  &homerow LALT K  &homerow LCTRL L  &kp SEMI   &kp APOS
-&kp LSHIFT   &kp Z     &kp X             &kp C            &kp V            &kp B         &kp RIGHT_ARROW  &kp N       &kp M            &kp COMMA        &kp DOT           &kp FSLH   &kp LEFT_SHIFT
-&kp C_MUTE   &kp LALT  &kp LGUI          &mt LSHFT TAB    &td_layer1       &td_layer2    &kp ENTER        &td_layer3  &td_layer4       &td_del          &kp RALT          &kp RCTRL
+&kp GRAVE    &kp N1    &kp N2                          &kp N3                         &kp N4                         &kp N5        &kp UP_ARROW     &kp N6      &kp N7                          &kp N8                          &kp N9                           &kp N0     &tog 5
+&caps_multi  &kp Q     &kp W                           &kp E                          &kp R                          &kp T         &kp DOWN_ARROW   &kp Y       &kp U                           &kp I                           &kp O                            &kp P      &kp BSLH
+&kp LCTRL    &kp A     &timeless_homerow_left LCTRL S  &timeless_homerow_left LALT D  &timeless_homerow_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &timeless_homerow_right LGUI J  &timeless_homerow_right LALT K  &timeless_homerow_right LCTRL L  &kp SEMI   &kp APOS
+&kp LSHIFT   &kp Z     &kp X                           &kp C                          &kp V                          &kp B         &kp RIGHT_ARROW  &kp N       &kp M                           &kp COMMA                       &kp DOT                          &kp FSLH   &kp LEFT_SHIFT
+&kp C_MUTE   &kp LALT  &kp LGUI                        &mt LSHFT TAB                  &td_layer1                     &td_layer2    &kp ENTER        &td_layer3  &td_layer4                      &td_del                         &kp RALT                         &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
