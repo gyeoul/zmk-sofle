@@ -84,7 +84,7 @@
 
         #binding-cells = <2>;
         tapping-term-ms = <168>;
-        flavor = "balanced";
+        flavor = "tap-unless-interrupted";
         quick-tap-ms = <168>;
         require-prior-idle-ms = <138>;
         hold-trigger-key-positions = <28 29 30 34 35 36>;
@@ -189,9 +189,9 @@
         symbol {
             bindings = <
 &trans  &trans           &trans             &trans           &trans                 &trans         &trans  &trans     &trans          &trans        &trans                &trans                 &trans
-&trans  &kp EXCLAMATION  &kp AT_SIGN        &kp POUND        &kp DOLLAR             &kp PERCENT    &trans  &kp CARET  &kp AMPERSAND   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&trans  &kp EXCLAMATION  &kp AT_SIGN        &kp POUND        &kp DOLLAR             &kp PERCENT    &trans  &kp CARET  &kp AMPERSAND   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans  &kp GRAVE        &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &trans         &trans  &trans     &kp MINUS       &kp EQUAL     &kp FSLH              &kp BSLH               &trans
-&trans  &kp TILDE        &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &trans         &trans  &trans     &kp UNDERSCORE  &kp PLUS      &kp QUESTION          &kp MINUS              &trans
+&trans  &kp TILDE        &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &trans         &trans  &trans     &kp UNDERSCORE  &kp PLUS      &kp QUESTION          &kp PIPE               &trans
 &trans  &trans           &trans             &trans           &trans                 &trans         &trans  &trans     &trans          &trans        &trans                &trans
             >;
         };
