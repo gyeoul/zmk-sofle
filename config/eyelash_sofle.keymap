@@ -86,9 +86,8 @@
         tapping-term-ms = <168>;
         flavor = "tap-unless-interrupted";
         quick-tap-ms = <168>;
-        require-prior-idle-ms = <138>;
+        require-prior-idle-ms = <146>;
         hold-trigger-key-positions = <28 29 30 34 35 36>;
-        hold-trigger-on-release;
         hold-while-undecided;
     };
 
