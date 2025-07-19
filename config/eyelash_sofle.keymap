@@ -53,7 +53,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER1";
         #binding-cells = <0>;
-        bindings = <&lt 1 SPACE>, <&kp SPACE>;
+        bindings = <&lt 1 TAB>, <&kp TAB>;
 
         tapping-term-ms = <168>;
     };
@@ -120,6 +120,15 @@
         hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
     };
 
+    td_space: td_space {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_SPACE";
+        #binding-cells = <0>;
+        bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
+
+        tapping-term-ms = <168>;
+    };
+
     behaviors {
     };
 
@@ -176,7 +185,7 @@
 &caps_multi  &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
 &kp LCTRL    &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
 &kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp LEFT_SHIFT
-&kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &mt LEFT_SHIFT TAB  &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RALT              &kp RCTRL
+&kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RALT              &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
