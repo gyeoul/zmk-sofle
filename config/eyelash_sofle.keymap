@@ -42,6 +42,34 @@
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
     };
 
+    tl_hr_left: tl_hr_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TL_HR_LEFT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        quick-tap-ms = <156>;
+        require-prior-idle-ms = <138>;
+        hold-trigger-key-positions = <1 2 3 4 5 14 15 16 17 18 27 28 29 30 31 40 41 42 43 44 0 13 26 39 53 54 55 56 57 59 60 61 62 63>;
+        hold-trigger-on-release;
+    };
+
+    tl_hr_right: tl_hr_right {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TL_HR_RIGHT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        quick-tap-ms = <156>;
+        require-prior-idle-ms = <138>;
+        hold-trigger-on-release;
+        hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
+    };
+
     caps_multi: caps_multi {
         compatible = "zmk,behavior-tap-dance";
         label = "CAPS_MULTI";
@@ -78,7 +106,24 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER4";
         #binding-cells = <0>;
-        bindings = <&lt 4 DELETE>, <&kp DELETE>;
+        bindings = <&lt 4 LANG_HANGEUL>;
+        tapping-term-ms = <156>;
+    };
+
+    td_layerfn: td_layerfn {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_LAYERFN";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_CONTROL>, <&lt 6 CAPSLOCK>;
+
+        tapping-term-ms = <156>;
+    };
+
+    td_space: td_space {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_SPACE";
+        #binding-cells = <0>;
+        bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
 
         tapping-term-ms = <156>;
     };
@@ -88,43 +133,6 @@
         label = "TD_DEL";
         #binding-cells = <0>;
         bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp BACKSPACE>;
-
-        tapping-term-ms = <156>;
-    };
-
-    tl_hr_left: tl_hr_left {
-        compatible = "zmk,behavior-hold-tap";
-        label = "TL_HR_LEFT";
-        bindings = <&kp>, <&kp>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        flavor = "balanced";
-        quick-tap-ms = <156>;
-        require-prior-idle-ms = <138>;
-        hold-trigger-key-positions = <1 2 3 4 5 14 15 16 17 18 27 28 29 30 31 40 41 42 43 44 0 13 26 39 53 54 55 56 57 59 60 61 62 63>;
-        hold-trigger-on-release;
-    };
-
-    tl_hr_right: tl_hr_right {
-        compatible = "zmk,behavior-hold-tap";
-        label = "TL_HR_RIGHT";
-        bindings = <&kp>, <&kp>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        flavor = "balanced";
-        quick-tap-ms = <156>;
-        require-prior-idle-ms = <138>;
-        hold-trigger-on-release;
-        hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
-    };
-
-    td_space: td_space {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TD_SPACE";
-        #binding-cells = <0>;
-        bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
 
         tapping-term-ms = <156>;
     };
@@ -155,9 +163,9 @@
             key-positions = <59 12 7>;
         };
 
-        hj_altgr {
+        gh_altgr {
             bindings = <&kp RALT>;
-            key-positions = <33 34>;
+            key-positions = <33 31>;
             timeout-ms = <80>;
             layers = <0>;
         };
@@ -182,29 +190,6 @@
             timeout-ms = <80>;
             layers = <0>;
         };
-
-        fn-g_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <26 31>;
-            timeout-ms = <450>;
-            layers = <0>;
-        };
-
-        fn-h_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <26 33>;
-            slow-release;
-            timeout-ms = <450>;
-            layers = <0>;
-        };
-
-        fn-l_delete {
-            bindings = <&kp DELETE>;
-            key-positions = <26 36>;
-            slow-release;
-            layers = <0>;
-            timeout-ms = <450>;
-        };
     };
 
     keymap {
@@ -214,9 +199,9 @@
             bindings = <
 &kp GRAVE    &kp N1    &kp N2               &kp N3              &kp N4              &kp N5        &kp UP_ARROW     &kp N6      &kp N7               &kp N8               &kp N9                &kp N0     &kp BSPC
 &caps_multi  &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
-&kp LCTRL    &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
-&kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp LEFT_SHIFT
-&kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RALT              &kp RCTRL
+&td_layerfn  &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
+&kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp RIGHT_SHIFT
+&kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RIGHT_ALT         &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -229,7 +214,7 @@
 &trans  &kp INSERT  &kp HOME   &kp UP      &kp END      &kp PG_UP     &trans  &kp HOME    &kp PG_DN    &kp PG_UP   &kp END    &kp INS     &trans
 &trans  &kp DELETE  &kp LEFT   &kp DOWN    &kp RIGHT    &kp PG_DN     &trans  &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT  &kp DEL     &trans
 &trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_REDO    &trans  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &trans
-&trans  &trans      &trans     &trans      &trans       &trans        &trans  &trans      &trans       &trans      &trans     &trans
+&trans  &trans      &trans     &trans      &trans       &trans        &trans  &kp LGUI    &kp LALT     &kp LCTRL   &trans     &trans
             >;
         };
 
@@ -275,6 +260,16 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        fn {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp ESC    &trans  &kp BSPC  &trans   &trans  &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &kp DEL  &trans  &trans   &trans
+            >;
         };
     };
 
