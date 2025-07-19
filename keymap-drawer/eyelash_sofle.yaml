@@ -401,15 +401,22 @@ combos:
   k: {t: '$$mdi:backup-restore$$', type: bootloader}
 - p: [33, 34]
   k: $$mdi:apple-keyboard-option$$
+  l: [LAYER0]
 - p: [35, 33]
   k: (
+  l: [LAYER0]
 - p: [36, 33]
   k: '{'
+  l: [LAYER0]
 - p: [37, 33]
   k: {t: '[', s: '{'}
+  l: [LAYER0]
 - p: [26, 31]
   k: $$mdi:keyboard-esc$$
+  l: [LAYER0]
 - p: [26, 33]
   k: {t: '$$mdi:backspace$$', type: backspace}
+  l: [LAYER0]
 - p: [26, 36]
   k: $$mdi:backspace-reverse-outline$$
+  l: [LAYER0]
