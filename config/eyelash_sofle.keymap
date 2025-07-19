@@ -114,7 +114,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYERFN";
         #binding-cells = <0>;
-        bindings = <&kp LEFT_CONTROL>, <&lt 6 CAPSLOCK>;
+        bindings = <&caps_word>, <&lt 6 CAPSLOCK>;
 
         tapping-term-ms = <156>;
     };
@@ -170,7 +170,7 @@
         base {
             bindings = <
 &kp GRAVE    &kp N1    &kp N2               &kp N3              &kp N4              &kp N5        &kp UP_ARROW     &kp N6      &kp N7               &kp N8               &kp N9                &kp N0     &kp BSPC
-&caps_multi  &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
+&kp LCTRL    &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
 &td_layerfn  &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
 &kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp RIGHT_SHIFT
 &kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RIGHT_ALT         &kp RCTRL
