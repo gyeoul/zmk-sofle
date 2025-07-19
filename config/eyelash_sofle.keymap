@@ -35,13 +35,6 @@
         tap-ms = <100>;
     };
 
-    ControlRGB_BRI: ControlRGB_BRI {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "CONTROLRGB_BRI";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
-
     tl_hr_left: tl_hr_left {
         compatible = "zmk,behavior-hold-tap";
         label = "TL_HR_LEFT";
@@ -68,13 +61,6 @@
         require-prior-idle-ms = <138>;
         hold-trigger-on-release;
         hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
-    };
-
-    caps_multi: caps_multi {
-        compatible = "zmk,behavior-tap-dance";
-        label = "CAPS_MULTI";
-        #binding-cells = <0>;
-        bindings = <&caps_word>, <&kp CAPSLOCK>;
     };
 
     td_layer1: td_layer1 {
