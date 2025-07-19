@@ -236,11 +236,11 @@
 
         fn {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp ESC    &trans  &kp BSPC  &trans   &trans  &kp DEL  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans  &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &kp DEL  &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp ESC    &trans  &kp BSPC  &kp UP   &kp DOWN  &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans   &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &kp DEL  &trans    &trans   &trans
             >;
         };
     };
