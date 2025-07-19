@@ -54,17 +54,17 @@ layers:
   - {t: /, s: '?'}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:volume-off$$
-  - $$mdi:apple-keyboard-option$$
   - LGUI
+  - $$mdi:apple-keyboard-option$$
   - '&td_layer1'
   - '&td_space'
   - '&td_layer2'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - '&td_layer3'
-  - '&td_del'
+  - '&td_delete'
   - '&td_layer4'
-  - RGUI
   - $$mdi:apple-keyboard-option$$
+  - RGUI
   navigation:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -425,8 +425,8 @@ layers:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
