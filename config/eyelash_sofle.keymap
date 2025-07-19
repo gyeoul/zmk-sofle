@@ -53,7 +53,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER1";
         #binding-cells = <0>;
-        bindings = <&lt 1 SPACE>, <&ht_dt_space SPACE 0>;
+        bindings = <&lt 1 TAB>, <&kp TAB>;
 
         tapping-term-ms = <168>;
     };
@@ -62,8 +62,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER2";
         #binding-cells = <0>;
-        bindings = <&lt 2 TAB>, <&ht_dt_tab TAB 0>;
-
+        bindings = <&lt 2 ESCAPE>;
         tapping-term-ms = <168>;
     };
 
@@ -71,8 +70,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER3";
         #binding-cells = <0>;
-        bindings = <&lt 3 ENTER>, <&ht_dt_enter ENTER 0>;
-
+        bindings = <&lt 3 ENTER>;
         tapping-term-ms = <168>;
     };
 
@@ -80,7 +78,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER4";
         #binding-cells = <0>;
-        bindings = <&lt 4 BACKSPACE>, <&ht_dt_backspace BACKSPACE 0>;
+        bindings = <&lt 4 DELETE>, <&kp DELETE>;
 
         tapping-term-ms = <168>;
     };
@@ -89,7 +87,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TD_DEL";
         #binding-cells = <0>;
-        bindings = <&mt RIGHT_SHIFT DELETE>, <&ht_dt_delete DELETE 0>;
+        bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp BACKSPACE>;
 
         tapping-term-ms = <168>;
     };
@@ -122,54 +120,13 @@
         hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 59 60 61 62 63>;
     };
 
-    ht_dt_backspace: ht_dt_backspace {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_DT_BACKSPACE";
-        bindings = <&kp>, <&dt_backspace>;
+    td_space: td_space {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_SPACE";
+        #binding-cells = <0>;
+        bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
 
-        #binding-cells = <2>;
         tapping-term-ms = <168>;
-        retro-tap;
-    };
-
-    ht_dt_space: ht_dt_space {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_DT_SPACE";
-        bindings = <&kp>, <&dt_space>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <168>;
-        retro-tap;
-    };
-
-    ht_dt_delete: ht_dt_delete {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_DT_DELETE";
-        bindings = <&kp>, <&dt_delete>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <168>;
-        retro-tap;
-    };
-
-    ht_dt_enter: ht_dt_enter {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_DT_ENTER";
-        bindings = <&kp>, <&dt_enter>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <168>;
-        retro-tap;
-    };
-
-    ht_dt_tab: ht_dt_tab {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_DT_TAB";
-        bindings = <&kp>, <&dt_tab>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <168>;
-        retro-tap;
     };
 
     behaviors {
@@ -219,43 +176,6 @@
         };
     };
 
-    macros {
-        dt_backspace: dt_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp BACKSPACE>;
-            label = "DT_BACKSPACE";
-        };
-
-        dt_delete: dt_delete {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DELETE &kp DELETE>;
-            label = "DT_DELETE";
-        };
-
-        dt_enter: dt_enter {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ENTER &kp ENTER>;
-            label = "DT_ENTER";
-        };
-
-        dt_space: dt_space {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp SPACE>;
-            label = "DT_SPACE";
-        };
-
-        dt_tab: dt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp TAB &kp TAB>;
-            label = "DT_TAB";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -265,7 +185,7 @@
 &caps_multi  &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
 &kp LCTRL    &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
 &kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp LEFT_SHIFT
-&kp C_MUTE   &kp LALT  &kp LGUI             &mt LSHFT ESCAPE    &td_layer1          &td_layer2    &kp ENTER        &td_layer3  &td_layer4           &td_del              &kp RALT              &kp RCTRL
+&kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RALT              &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
