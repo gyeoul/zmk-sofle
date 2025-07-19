@@ -14,7 +14,7 @@ layers:
   - {t: '9', s: (}
   - {t: '0', s: )}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&caps_multi'
+  - $$mdi:apple-keyboard-control$$
   - Q
   - W
   - E
@@ -26,7 +26,7 @@ layers:
   - I
   - O
   - P
-  - {t: \, s: '|'}
+  - $$mdi:apple-keyboard-control$$
   - '&td_layerfn'
   - A
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
@@ -63,8 +63,8 @@ layers:
   - '&td_layer3'
   - '&td_del'
   - '&td_layer4'
+  - RGUI
   - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-control$$
   navigation:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -297,8 +297,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '-', s: _}
   - {t: '=', s: +}
-  - {t: /, s: '?'}
   - {t: \, s: '|'}
+  - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
@@ -310,8 +310,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - _
   - +
-  - '?'
   - '|'
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -425,8 +425,8 @@ layers:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-down-bold$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -464,15 +464,3 @@ combos:
   k: {t: '$$mdi:backup-restore$$', type: bootloader}
 - p: [59, 12, 7]
   k: {t: '$$mdi:backup-restore$$', type: bootloader}
-- p: [33, 31]
-  k: $$mdi:apple-keyboard-option$$
-  l: [LAYER0]
-- p: [35, 33]
-  k: (
-  l: [LAYER0]
-- p: [36, 33]
-  k: '{'
-  l: [LAYER0]
-- p: [37, 33]
-  k: {t: '[', s: '{'}
-  l: [LAYER0]
