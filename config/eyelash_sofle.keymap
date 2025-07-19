@@ -129,6 +129,15 @@
         tapping-term-ms = <156>;
     };
 
+    td_layerfn: td_layerfn {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_LAYERFN";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_CONTROL>, <&lt 6 CAPSLOCK>;
+
+        tapping-term-ms = <156>;
+    };
+
     behaviors {
     };
 
@@ -155,9 +164,9 @@
             key-positions = <59 12 7>;
         };
 
-        hj_altgr {
+        gh_altgr {
             bindings = <&kp RALT>;
-            key-positions = <33 34>;
+            key-positions = <33 31>;
             timeout-ms = <80>;
             layers = <0>;
         };
@@ -182,29 +191,6 @@
             timeout-ms = <80>;
             layers = <0>;
         };
-
-        fn-g_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <26 31>;
-            timeout-ms = <450>;
-            layers = <0>;
-        };
-
-        fn-h_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <26 33>;
-            slow-release;
-            timeout-ms = <450>;
-            layers = <0>;
-        };
-
-        fn-l_delete {
-            bindings = <&kp DELETE>;
-            key-positions = <26 36>;
-            slow-release;
-            layers = <0>;
-            timeout-ms = <450>;
-        };
     };
 
     keymap {
@@ -214,7 +200,7 @@
             bindings = <
 &kp GRAVE    &kp N1    &kp N2               &kp N3              &kp N4              &kp N5        &kp UP_ARROW     &kp N6      &kp N7               &kp N8               &kp N9                &kp N0     &kp BSPC
 &caps_multi  &kp Q     &kp W                &kp E               &kp R               &kp T         &kp DOWN_ARROW   &kp Y       &kp U                &kp I                &kp O                 &kp P      &kp BSLH
-&kp LCTRL    &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
+&td_layerfn  &kp A     &tl_hr_left LCTRL S  &tl_hr_left LALT D  &tl_hr_left LGUI F  &kp G         &kp LEFT_ARROW   &kp H       &tl_hr_right LGUI J  &tl_hr_right LALT K  &tl_hr_right LCTRL L  &kp SEMI   &kp APOS
 &kp LSHIFT   &kp Z     &kp X                &kp C               &kp V               &kp B         &kp RIGHT_ARROW  &kp N       &kp M                &kp COMMA            &kp DOT               &kp FSLH   &kp LEFT_SHIFT
 &kp C_MUTE   &kp LALT  &kp LGUI             &td_layer1          &td_space           &td_layer2    &kp ENTER        &td_layer3  &td_del              &td_layer4           &kp RALT              &kp RCTRL
             >;
@@ -275,6 +261,16 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        fn {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp ESC    &trans  &kp BSPC  &trans  &trans  &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans   &trans
+            >;
         };
     };
 
