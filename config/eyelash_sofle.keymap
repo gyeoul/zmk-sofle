@@ -116,7 +116,7 @@
         #binding-cells = <0>;
         bindings = <&caps_word>, <&lt 6 CAPSLOCK>;
 
-        tapping-term-ms = <156>;
+        tapping-term-ms = <180>;
     };
 
     td_space: td_space {
