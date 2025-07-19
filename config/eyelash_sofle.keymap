@@ -179,6 +179,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <26 31>;
         };
+
+        fn-h_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <26 33>;
+        };
+
+        fn-l_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <26 36>;
+        };
     };
 
     keymap {
