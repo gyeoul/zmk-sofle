@@ -163,13 +163,6 @@
             key-positions = <59 12 7>;
         };
 
-        gh_altgr {
-            bindings = <&kp RALT>;
-            key-positions = <33 31>;
-            timeout-ms = <80>;
-            layers = <0>;
-        };
-
         brace_s {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <35 33>;
