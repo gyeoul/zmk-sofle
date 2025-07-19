@@ -155,24 +155,29 @@
             key-positions = <59 12 7>;
         };
 
-        jk_altgr {
+        hj_altgr {
             bindings = <&kp RALT>;
-            key-positions = <34 35>;
+            key-positions = <33 34>;
         };
 
         brace_s {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <46 35>;
+            key-positions = <35 33>;
         };
 
         brace_m {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <46 36>;
+            key-positions = <36 33>;
         };
 
         brace_l {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <46 37>;
+            key-positions = <37 33>;
+        };
+
+        fn-g_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <26 31>;
         };
     };
 
