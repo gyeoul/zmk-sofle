@@ -158,36 +158,52 @@
         hj_altgr {
             bindings = <&kp RALT>;
             key-positions = <33 34>;
+            timeout-ms = <80>;
+            layers = <0>;
         };
 
         brace_s {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <35 33>;
+            timeout-ms = <80>;
+            layers = <0>;
         };
 
         brace_m {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <36 33>;
+            timeout-ms = <80>;
+            layers = <0>;
         };
 
         brace_l {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <37 33>;
+            timeout-ms = <80>;
+            layers = <0>;
         };
 
         fn-g_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <26 31>;
+            timeout-ms = <450>;
+            layers = <0>;
         };
 
         fn-h_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <26 33>;
+            slow-release;
+            timeout-ms = <450>;
+            layers = <0>;
         };
 
         fn-l_delete {
             bindings = <&kp DELETE>;
             key-positions = <26 36>;
+            slow-release;
+            layers = <0>;
+            timeout-ms = <450>;
         };
     };
 
