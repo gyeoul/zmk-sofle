@@ -55,7 +55,7 @@
         #binding-cells = <0>;
         bindings = <&lt 1 TAB>, <&kp TAB>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer2: td_layer2 {
@@ -63,7 +63,7 @@
         label = "TD_LAYER2";
         #binding-cells = <0>;
         bindings = <&lt 2 ESCAPE>;
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer3: td_layer3 {
@@ -71,7 +71,7 @@
         label = "TD_LAYER3";
         #binding-cells = <0>;
         bindings = <&lt 3 ENTER>;
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer4: td_layer4 {
@@ -80,7 +80,7 @@
         #binding-cells = <0>;
         bindings = <&lt 4 DELETE>, <&kp DELETE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_del: td_del {
@@ -89,7 +89,7 @@
         #binding-cells = <0>;
         bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp BACKSPACE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     tl_hr_left: tl_hr_left {
@@ -126,7 +126,7 @@
         #binding-cells = <0>;
         bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     behaviors {
@@ -155,24 +155,39 @@
             key-positions = <59 12 7>;
         };
 
-        jk_altgr {
+        hj_altgr {
             bindings = <&kp RALT>;
-            key-positions = <34 35>;
+            key-positions = <33 34>;
         };
 
         brace_s {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <46 35>;
+            key-positions = <35 33>;
         };
 
         brace_m {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <46 36>;
+            key-positions = <36 33>;
         };
 
         brace_l {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <46 37>;
+            key-positions = <37 33>;
+        };
+
+        fn-g_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <26 31>;
+        };
+
+        fn-h_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <26 33>;
+        };
+
+        fn-l_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <26 36>;
         };
     };
 
