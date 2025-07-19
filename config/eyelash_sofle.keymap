@@ -55,7 +55,7 @@
         #binding-cells = <0>;
         bindings = <&lt 1 TAB>, <&kp TAB>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer2: td_layer2 {
@@ -63,7 +63,7 @@
         label = "TD_LAYER2";
         #binding-cells = <0>;
         bindings = <&lt 2 ESCAPE>;
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer3: td_layer3 {
@@ -71,7 +71,7 @@
         label = "TD_LAYER3";
         #binding-cells = <0>;
         bindings = <&lt 3 ENTER>;
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_layer4: td_layer4 {
@@ -80,7 +80,7 @@
         #binding-cells = <0>;
         bindings = <&lt 4 DELETE>, <&kp DELETE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     td_del: td_del {
@@ -89,7 +89,7 @@
         #binding-cells = <0>;
         bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp BACKSPACE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     tl_hr_left: tl_hr_left {
@@ -126,7 +126,7 @@
         #binding-cells = <0>;
         bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
 
-        tapping-term-ms = <168>;
+        tapping-term-ms = <156>;
     };
 
     behaviors {
