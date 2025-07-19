@@ -56,13 +56,13 @@ layers:
   - $$mdi:volume-off$$
   - $$mdi:apple-keyboard-option$$
   - LGUI
-  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-shift$$'}
   - '&td_layer1'
+  - '&td_space'
   - '&td_layer2'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - '&td_layer3'
-  - '&td_layer4'
   - '&td_del'
+  - '&td_layer4'
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   navigation:
