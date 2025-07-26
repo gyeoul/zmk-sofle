@@ -28,8 +28,8 @@ layers:
   - P
   - $$mdi:apple-keyboard-control$$
   - '&td_layerfn'
-  - A
-  - {t: S, h: LGUI}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, h: '$$mdi:apple-keyboard-option$$'}
   - G
@@ -37,8 +37,8 @@ layers:
   - H
   - {t: J, h: '$$mdi:apple-keyboard-option$$'}
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: L, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: ;, s: ':'}
+  - {t: L, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: ;, h: '$$mdi:apple-keyboard-command$$', s: ':'}
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-shift$$
   - Z
@@ -57,11 +57,11 @@ layers:
   - LGUI
   - $$mdi:apple-keyboard-option$$
   - '&td_layer1'
-  - '&td_space'
+  - $$mdi:keyboard-space$$
   - '&td_layer2'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - '&td_layer3'
-  - '&td_delete'
+  - {t: '$$mdi:backspace$$', type: backspace}
   - '&td_layer4'
   - $$mdi:apple-keyboard-option$$
   - RIGHT GUI
@@ -292,7 +292,7 @@ layers:
   - {t: '[', s: '{'}
   - '{'
   - (
-  - {t: '$$mdi:transfer$$', type: trans}
+  - <
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '-', s: _}
@@ -305,13 +305,13 @@ layers:
   - {t: ']', s: '}'}
   - '}'
   - )
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '>'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - _
   - +
   - '|'
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '?'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -418,10 +418,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - Sft+S
+  - Ctl+D
+  - Alt+F
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backspace$$', type: backspace}
