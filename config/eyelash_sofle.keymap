@@ -265,6 +265,8 @@
 &trans  &kp INSERT  &kp DEL    &kp HOME  &kp END   &kp PG_DN    &trans  &kp PG_DN        &kp HOME           &kp END          &kp INSERT  &kp DEL    &trans
 &trans  &trans      &trans     &trans    &trans    &trans       &trans  &tog 5           &kp K_APPLICATION  &trans           &trans      &trans
             >;
+
+            sensor-bindings = <&scroll_encoder>;
         };
 
         media {
@@ -287,6 +289,8 @@
 &trans  &kp TILDE        &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &trans  &trans     &kp UNDERSCORE  &kp PLUS      &kp PIPE              &kp QUESTION           &trans
 &trans  &trans           &trans             &trans           &trans                 &trans              &trans  &trans     &trans          &trans        &trans                &trans
             >;
+
+            sensor-bindings = <&scroll_encoder>;
         };
 
         mouse {
