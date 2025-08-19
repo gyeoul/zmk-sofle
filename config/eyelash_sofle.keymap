@@ -109,41 +109,6 @@
         tapping-term-ms = <168>;
     };
 
-    td_layerfn: td_layerfn {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TD_LAYERFN";
-        #binding-cells = <0>;
-        bindings = <&lt 7 LANG_HANGEUL>;
-        tapping-term-ms = <180>;
-    };
-
-    td_space: td_space {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TD_SPACE";
-        #binding-cells = <0>;
-        bindings = <&mt LEFT_SHIFT SPACE>, <&kp SPACE>;
-
-        tapping-term-ms = <156>;
-    };
-
-    td_delete: td_delete {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TD_DELETE";
-        #binding-cells = <0>;
-        bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp BACKSPACE>;
-
-        tapping-term-ms = <156>;
-    };
-
-    ht_caps_word: ht_caps_word {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HT_CAPS_WORD";
-        bindings = <&kp>, <&caps_word>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <156>;
-    };
-
     td_layer5: td_layer5 {
         compatible = "zmk,behavior-tap-dance";
         label = "TD_LAYER5";
@@ -160,6 +125,19 @@
         bindings = <&lt 6 DELETE>, <&kp DELETE>;
 
         tapping-term-ms = <168>;
+    };
+
+    layer_on_toggle: layer_on_toggle {
+        compatible = "zmk,behavior-toggle-layer";
+        label = "LAYER_ON_TOGGLE";
+        #binding-cells = <1>;
+    };
+
+    layer_off_toggle: layer_off_toggle {
+        compatible = "zmk,behavior-toggle-layer";
+        label = "LAYER_OFF_TOGGLE";
+        #binding-cells = <1>;
+        toggle-mode = "off";
     };
 
     behaviors {
@@ -259,6 +237,20 @@
             bindings = <&kp LESS_THAN &kp MINUS>;
             label = "MACRO_ARROW_SINGLE_LEFT";
         };
+
+        switch_on: switch_on {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &layer_on_toggle 7>;
+            label = "SWITCH_ON";
+        };
+
+        switch_off: switch_off {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &layer_off_toggle 7>;
+            label = "SWITCH_OFF";
+        };
     };
 
     keymap {
@@ -266,11 +258,11 @@
 
         base {
             bindings = <
-&kp LGUI    &kp N1                  &kp N2              &kp N3                      &kp N4                    &kp N5    &kp UP_ARROW     &kp N6  &kp N7                     &kp N8                       &kp N9               &kp N0                       &kp RGUI
-&kp TAB     &kp Q                   &kp W               &kp E                       &kp R                     &kp T     &kp DOWN_ARROW   &kp Y   &kp U                      &kp I                        &kp O                &kp P                        &kp RCTRL
-&kp LCTRL   &tl_hr_left LEFT_GUI A  &tl_hr_left LALT S  &tl_hr_left LEFT_CONTROL D  &tl_hr_left LEFT_SHIFT F  &kp G     &kp LEFT_ARROW   &kp H   &tl_hr_right LEFT_SHIFT J  &tl_hr_right LEFT_CONTROL K  &tl_hr_right LALT L  &tl_hr_right LGUI SEMICOLON  &kp APOS
-&kp LALT    &kp Z                   &kp X               &kp C                       &kp V                     &kp B     &kp RIGHT_ARROW  &kp N   &kp M                      &kp COMMA                    &kp DOT              &kp FSLH                     &kp RIGHT_SHIFT
-&kp C_MUTE  &none                   &td_layer1          &td_layer2                  &td_layer3                &none     &kp ENTER        &none   &td_layer4                 &td_layer5                   &td_layer6           &none
+&kp LGUI    &kp N1  &kp N2      &kp N3      &kp N4      &kp N5    &kp UP_ARROW     &kp N6  &kp N7      &kp N8      &kp N9      &kp N0    &kp RGUI
+&kp LALT    &kp Q   &kp W       &kp E       &kp R       &kp T     &kp DOWN_ARROW   &kp Y   &kp U       &kp I       &kp O       &kp P     &kp RCTRL
+&kp LCTRL   &kp A   &kp S       &kp D       &kp F       &kp G     &kp H            &kp H   &kp J       &kp K       &kp L       &kp SEMI  &kp APOS
+&kp LSHFT   &kp Z   &kp X       &kp C       &kp V       &kp B     &kp RIGHT_ARROW  &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH  &kp RIGHT_SHIFT
+&kp C_MUTE  &trans  &td_layer1  &td_layer2  &td_layer3  &trans    &kp ENTER        &trans  &td_layer4  &td_layer5  &td_layer6  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -345,21 +337,34 @@
 
         fn {
             bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans     &trans     &trans     &trans        &trans
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans     &trans     &trans     &trans        &trans
-&trans  &kp LG(A)  &kp LA(S)  &kp LC(D)  &kp LS(F)  &trans    &trans  &trans  &kp LS(J)  &kp LC(K)  &kp LA(L)  &kp LG(SEMI)  &trans
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans     &trans     &trans     &trans        &trans
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans     &trans     &trans     &trans
+&trans  &kp LS(M)  &kp LS(COMMA)  &kp DOT  &kp LS(J)   &kp LS(K)    &trans  &kp LS(L)     &kp LS(U)     &kp LS(I)         &kp LS(O)       &kp LS(N)        &trans
+&trans  &kp Q      &kp W          &kp N3   &kp LS(W)   &kp LS(E)    &trans  &switch_on Y  &switch_on U  &switch_on I      &switch_on O    &switch_on P     &trans
+&trans  &kp A      &kp S          &kp N1   &kp LS(Q)   &kp LS(A)    &trans  &switch_on H  &switch_on J  &switch_on K      &switch_on L    &switch_on SEMI  &switch_on SQT
+&trans  &kp Z      &kp N2         &kp X    &kp LS(N1)  &kp LS(Z)    &trans  &switch_on N  &switch_on M  &switch_on COMMA  &switch_on DOT  &switch_on N0    &trans
+&trans  &trans     &trans         &trans   &trans      &trans       &trans  &trans        &trans        &trans            &trans          &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &switch_off LS(M)   &switch_off LS(COMMA)  &switch_off LS(DOT)  &switch_off LS(J)  &switch_off LS(K)    &trans  &switch_off LS(L)  &switch_off LS(U)  &switch_off LS(I)  &switch_off LS(O)  &switch_off LS(N)  &trans
+&trans  &switch_off LS(R)   &switch_off N6         &switch_off R        &switch_off T      &switch_off E        &trans  &kp Y              &kp U              &kp G              &kp N9             &kp P              &trans
+&trans  &switch_off N5      &switch_off N7         &switch_off D        &switch_off F      &switch_off G        &trans  &kp H              &kp J              &kp K              &kp L              &kp SEMI           &kp APOS
+&trans  &switch_off KP_DOT  &switch_off N4         &switch_off C        &switch_off V      &switch_off B        &trans  &kp N              &kp M              &kp COMMA          &kp DOT            &kp FSLH           &trans
+&trans  &trans              &trans                 &trans               &trans             &trans               &trans  &trans             &trans             &trans             &trans             &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &kp LS(B)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)    &trans  &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &trans
+&trans  &trans     &trans      &trans      &trans      &trans        &trans  &trans      &trans      &trans      &trans      &kp LS(T)   &trans
+&trans  &trans     &trans      &trans      &trans      &trans        &trans  &trans      &kp LS(H)   &kp DQT     &trans      &kp COLON   &kp LS(G)
+&trans  &trans     &trans      &trans      &trans      &trans        &trans  &trans      &trans      &kp LS(Y)   &kp LS(P)   &trans      &trans
+&trans  &trans     &trans      &trans      &trans      &trans        &trans  &trans      &trans      &trans      &trans      &trans
             >;
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        mouse_layer {
-            if-layers = <2 6>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
